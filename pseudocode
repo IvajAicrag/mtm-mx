@@ -1,0 +1,8 @@
+Given a list of activities
+those activities will be distribitued in priorities lists
+in a loop, till all the priorities lists are empty:
+  create a variable operario and add the activities depending on the best function
+  create other variables as operarioN_tiempo = total time of the activities in the list
+  if the the prioritie list is empty and there is free time left for the operary repeat the process till the next list of priority.
+  if the list is not empty and the operary cannot take more activities, so create antoher operary and repeat the process
+  

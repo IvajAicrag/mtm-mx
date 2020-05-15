@@ -1,0 +1,97 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+
+  <h1>MTM Cable</h1>
+
+  <form class="form-group" action="/" method="post">
+    <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Tipo</th>
+        <th scope="col">Elemento</th>
+        <th scope="col">Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th rowspan="3">Conectores</th>
+        <td>Conectores grandes</td>
+        <td><input type="number" name="e0" value="0"></td>
+      </tr>
+      <tr>
+        <td>Conecotres medianos</td>
+        <td><input type="number" name="e1" value="0"></td>
+      </tr>
+      <tr>
+        <td>Conectores pequeños</td>
+        <td><input type="number" name="e2" value="0"></td>
+      </tr>
+      <tr>
+        <th rowspan="2">Juntas</th>
+        <td>Juntas redondas</td>
+        <td><input type="number" name="e3" value="0"></td>
+      </tr>
+      <tr>
+        <td>Juntas planas</td>
+        <td><input type="number" name="e4" value="0"></td>
+      </tr>
+      <tr>
+        <th rowspan="6">Encliquetados</th>
+        <th colspan="2">Diametro > 1</th>
+      </tr>
+      <tr>
+        <td>Pequeños (<100mm)</td>
+        <td><input type="number" name="e5" value="0"></td>
+      </tr>
+      <tr>
+        <td>Medianos (100-300mm)</td>
+        <td><input type="number" name="e6" value="0"></td>
+      </tr>
+      <tr>
+        <td>Largos (300-500mm)</td>
+        <td><input type="number" name="e7" value="0"></td>
+      </tr>
+      <tr>
+        <td>Largos (500-750mm)</td>
+        <td><input type="number" name="e8" value="0"></td>
+      </tr>
+      <tr>
+        <td>Largos (750-1000mm)</td>
+        <td><input type="number" name="e9" value="0"></td>
+      </tr>
+      <tr>
+        <th rowspan="6">Encliquetados</th>
+        <th colspan="2">Diametro: 0,5-1</th>
+      </tr>
+      <tr>
+        <td>Pequeños (<100mm)</td>
+        <td><input type="number" name="e10" value="0"></td>
+      </tr>
+      <tr>
+        <td>Medianos (100-300mm)</td>
+        <td><input type="number" name="e11" value="0"></td>
+      </tr>
+      <tr>
+        <td>Largos (300-500mm)</td>
+        <td><input type="number" name="e12" value="0"></td>
+      </tr>
+      <tr>
+        <td>Largos (500-750mm)</td>
+        <td><input type="number" name="e13" value="0"></td>
+      </tr>
+      <tr>
+        <td>Largos (750-1000mm)</td>
+        <td><input type="number" name="e14" value="0"></td>
+      </tr>
+
+    </tbody>
+  </table>
+  <button class="btn btn-primary" type="submit">Calcular</button>
+  </form>
+
+{% endblock %}
