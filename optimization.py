@@ -8,7 +8,7 @@ def maxSubarraySum(arr,N,K):
     cum_set = set()
     cum_set.add(0)
 
-    max_sum = 12
+    max_sum = 0
     cSum = 0
 
     secuence = []
