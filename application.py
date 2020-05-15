@@ -5,6 +5,7 @@ from flask import Flask, session, request, render_template, redirect, url_for, j
 from flask_session import Session
 
 from helpers import best
+from mtmgureak import shareOut
 
 app = Flask(__name__)
 
@@ -17,5 +18,6 @@ def index():
         values = []
         for key, val in request.form.items():
             if key.startswith("e"):
-                values.append(val)
-        return render_template("index.html")
+                values.append(int(val))
+        op = shareOut(values,25.7)
+        return render_template("results.html", op = op)

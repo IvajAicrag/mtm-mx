@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block main %}
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Operario</th>
+        <th>Tareas</th>
+        <th>Tiempo</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for info in op %}
+        <tr>
+          <td>operador: {{ info }}</td>
+          <td>{{ op[info][0] }}</td>
+          <td>{{ op[info][1] }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+{% endblock %}
