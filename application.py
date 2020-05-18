@@ -19,5 +19,6 @@ def index():
         for key, val in request.form.items():
             if key.startswith("e"):
                 values.append(int(val))
-        op = shareOut(values,25.7)
+        takt_time = float(request.form.get("takt_time"))
+        op = shareOut(values,takt_time)
         return render_template("results.html", op = op)
