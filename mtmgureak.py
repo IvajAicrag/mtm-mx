@@ -10,7 +10,7 @@ def shareOut(elements, takt_time):
 
     dp1 = {'poner_cg': 2.59, 'poner_cm': 3.18, 'poner_cp': 3.62,'poner_inter': 4.24}
     dp2 = {'junta_redonda': 4.73, 'junta_plana': 9.15,}
-    dp3 = {'en_d>1_<100': 2.70, 'en_d>1_100-300':3.20, 'en_d>1_300-500': 3.85, 'en_d>1_500-750':4.71, 'en_d>1_750-1000': 5.47, 'en_d=0,5-1_<100': 3.20, 'en_d=0,5-1_100-300': 3.70, 'en_d=0,5-1_300-500': 4.35, 'en_d=0,5-1_500-750': 5.21, 'en_d=0,5-1_750-1000': 5.97, 'en_d<0,5_<100': 4.47, 'en_d<0,5_100-300': 4.96, 'en_d<0,5_300-500': 5.61, 'en_d<0,5_500-750': 6.47, 'en_d<0,5_750-1000': 7.24, 'en_inter_<100': 5.52, 'en_inter_100-300': 5.92, 'en_inter_>300': 6.24}
+    dp3 = {'en_d>1_<100': 2.70, 'en_d>1_100-300':3.20, 'en_d>1_300-500': 3.85, 'en_d>1_500-750':4.71, 'en_d>1_750-1000': 5.47, 'en_d=0,5-1_<100': 3.2001, 'en_d=0,5-1_100-300': 3.70, 'en_d=0,5-1_300-500': 4.35, 'en_d=0,5-1_500-750': 5.21, 'en_d=0,5-1_750-1000': 5.97, 'en_d<0,5_<100': 4.47, 'en_d<0,5_100-300': 4.96, 'en_d<0,5_300-500': 5.61, 'en_d<0,5_500-750': 6.47, 'en_d<0,5_750-1000': 7.24, 'en_inter_<100': 5.52, 'en_inter_100-300': 5.92, 'en_inter_>300': 6.24}
     dp4 = {'poner_brida_simple': 5.43, 'poner_brida_compleja': 6.79, 'colocar_lampara_giratoria':6.49, 'colocar_lampara_lengueta': 6.05, 'colocar_retenedor': 3.20, 'cierre_seguridad': 4.50, 'cerrar_tapa_automatica':5.66, 'cerrar_tapa_libro':3.15, 'cerrar_integrado':1.73, 'cerrar_independiete': 4.15, 'encintado_manual': 9.42, 'encintado_manual_posicion': 10.81, 'encintado_automatico': 6.02, 'encintado_automatico_posicion': 7.32}
     dp5 = {'cortar_brida_simple': 4.14, 'orientar_cortar_brida': 5.18}
     dp6 = { 'extraer_cg': 1.26, 'extraer_cm': 1.35, 'extraer_cp': 1.73 }
