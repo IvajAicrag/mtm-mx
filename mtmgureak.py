@@ -187,7 +187,7 @@ def shareOut(elements, takt_time):
     #transformar las p en tiempo
 
     #In case of more thant 15 Encliquetados we will split the first 15 for optimization
-    if len(p3) > 15:
+    if len(p3) > 18:
         p9 = copy.deepcopy(p8)
         dp9 = copy.deepcopy(dp8)
         p8 = copy.deepcopy(p7)
