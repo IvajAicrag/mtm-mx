@@ -295,6 +295,21 @@ def shareOut(elements, takt_time):
     operarios[n] = [[],0]
     for i in range(len(pendientes)):
 
+        if (('Test eléctrico' in dic_pendientes[i]) or ('Test estanqueidad' in dic_pendientes[i])):
+            print("inside")
+            new_dic = copy.deepcopy(dic_pendientes[i])
+
+            for key in new_dic:
+                n += 1
+                operarios[n] = [[],0]
+                operarios[n][0].append(key)
+                operarios[n][1] = dic_pendientes[i][key]
+                print(key)
+                pendientes[i].remove(key)
+
+                dic_pendientes[i].pop(key, None)
+
+
         while len(pendientes[i]) > 0:
             pt = []
             #iterates over keys in pendientes[i]
