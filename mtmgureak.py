@@ -2,7 +2,7 @@ import math
 import itertools
 import copy
 
-from helpers import best
+from helpers import best, chunker_list
 
 def shareOut(elements, takt_time):
 
@@ -17,6 +17,7 @@ def shareOut(elements, takt_time):
     dp7 = {}
     dp8 = {'embalar cable directo a caja': 2.04, 'embalar cable de plástico a caja':10.36}
     dp9 = {}
+    dp10 = {}
 
     #p1 = ['poner_cg', 'poner_cm', 'poner_cm']
     p1 = []
@@ -37,6 +38,7 @@ def shareOut(elements, takt_time):
 
     p9 = []
 
+    p10 = []
 
     #def por_ahora():
     #takt_time = float(input("takt time: "))
@@ -192,8 +194,8 @@ def shareOut(elements, takt_time):
     #takt_time = 15
     #transformar las p en tiempo
 
-    #In case of more thant 15 Encliquetados we will split the first 15 for optimization
-    if len(p3) > 20:
+    #In case of more thant 20 Encliquetados we will split the first 15 for optimization
+    if len(p3) > 20 and len(p3) < 40:
         p9 = copy.deepcopy(p8)
         dp9 = copy.deepcopy(dp8)
         p8 = copy.deepcopy(p7)
@@ -223,9 +225,38 @@ def shareOut(elements, takt_time):
         p4 = copy.deepcopy(second)
         p3 = copy.deepcopy(first)
 
+    elif len(p3)>= 40:
 
-    pendientes = [p1, p2, p3, p4, p5, p6, p7, p8, p9]
-    dic_pendientes = [dp1, dp2, dp3, dp4, dp5, dp6, dp7, dp8, dp9]
+        p10 = copy.deepcopy(p8)
+        dp10 = copy.deepcopy(dp8)
+        p9 = copy.deepcopy(p7)
+        dp9.clear()
+        dp9 = copy.deepcopy(dp7)
+        p8 = copy.deepcopy(p6)
+        dp8 = copy.deepcopy(dp6)
+        p7 = copy.deepcopy(p5)
+        dp7.clear()
+        dp7 = copy.deepcopy(dp5)
+        p6 = copy.deepcopy(p4)
+        dp6.clear()
+        dp6 = copy.deepcopy(dp4)
+
+
+        #store the dicts to make faster the operation of share in Encliquetados
+        dp5 = copy.deepcopy(dp3)
+        dp4.clear()
+        dp4 = copy.deepcopy(dp3)
+        #divide p3 into three
+        division = list(chunker_list(p3,3))
+
+        p5 = division[2]
+        p4 = division[1]
+        p3 = division[0]
+
+
+
+    pendientes = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]
+    dic_pendientes = [dp1, dp2, dp3, dp4, dp5, dp6, dp7, dp8, dp9, dp10]
     n = 0
     operarios = {}
     operarios[n] = [[],0]
