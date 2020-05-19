@@ -18,6 +18,7 @@ def shareOut(elements, takt_time):
     dp8 = {'embalar cable directo a caja': 2.04, 'embalar cable de plástico a caja':10.36}
     dp9 = {}
     dp10 = {}
+    dp11 = {}
 
     #p1 = ['poner_cg', 'poner_cm', 'poner_cm']
     p1 = []
@@ -39,6 +40,8 @@ def shareOut(elements, takt_time):
     p9 = []
 
     p10 = []
+
+    p11 = []
 
     #def por_ahora():
     #takt_time = float(input("takt time: "))
@@ -225,7 +228,7 @@ def shareOut(elements, takt_time):
         p4 = copy.deepcopy(second)
         p3 = copy.deepcopy(first)
 
-    elif len(p3)>= 40:
+    elif len(p3)>= 40 and len(p3) < 60:
 
         p10 = copy.deepcopy(p8)
         dp10 = copy.deepcopy(dp8)
@@ -247,16 +250,46 @@ def shareOut(elements, takt_time):
         dp4.clear()
         dp4 = copy.deepcopy(dp3)
         #divide p3 into three
-        division = list(chunker_list(p3,3))
+        division = list(chunker_list(p3, 3))
 
+        p5 = division[2]
+        p4 = division[1]
+        p3 = division[0]
+
+    elif len(p3)>= 60:
+
+        p11 = copy.deepcopy(p8)
+        dp11 = copy.deepcopy(dp8)
+        p10 = copy.deepcopy(p7)
+        dp10.clear()
+        dp10 = copy.deepcopy(dp7)
+        p9 = copy.deepcopy(p6)
+        dp9 = copy.deepcopy(dp6)
+        p8 = copy.deepcopy(p5)
+        dp8.clear()
+        dp8 = copy.deepcopy(dp5)
+        p7 = copy.deepcopy(p4)
+        dp7.clear()
+        dp7 = copy.deepcopy(dp4)
+
+        #store the dicts to make faster the operation of share in Encliquetados
+        dp6 = copy.deepcopy(dp3)
+        dp5 = copy.deepcopy(dp3)
+        dp4.clear()
+        dp4 = copy.deepcopy(dp3)
+
+        #divide p3 into 4
+        division = list(chunker_list(p3, 4))
+
+        p6 = division[3]
         p5 = division[2]
         p4 = division[1]
         p3 = division[0]
 
 
 
-    pendientes = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10]
-    dic_pendientes = [dp1, dp2, dp3, dp4, dp5, dp6, dp7, dp8, dp9, dp10]
+    pendientes = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11]
+    dic_pendientes = [dp1, dp2, dp3, dp4, dp5, dp6, dp7, dp8, dp9, dp10, dp11]
     n = 0
     operarios = {}
     operarios[n] = [[],0]
