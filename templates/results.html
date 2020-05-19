@@ -18,7 +18,13 @@
       {% for info in op %}
         <tr>
           <td>operador: {{ info }}</td>
-          <td>{{ op[info][0] }}</td>
+          <td>
+            <ul>
+              {% for i in op[info][0] %}
+                <li>{{ i }}</li>
+              {% endfor %}
+            </ul>
+          </td>
           <td>{{ op[info][1] }}</td>
         </tr>
       {% endfor %}
