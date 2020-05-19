@@ -4,5 +4,8 @@ body {
 
 th {
   vertical-align: middle !important;
+}
+
+tbody > tr > th {
   text-align: center;
 }

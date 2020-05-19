@@ -17,7 +17,9 @@ def index():
     else:
         values = []
         for key, val in request.form.items():
+            print(key)
             if key.startswith("e"):
+                print(key)
                 values.append(int(val))
         takt_time = float(request.form.get("takt_time"))
         op = shareOut(values,takt_time)
