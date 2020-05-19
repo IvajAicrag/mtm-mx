@@ -35,3 +35,7 @@ def best(numbers, target):
 #best_combination, best_sum = best(numbers,target)
 
 #print("\nbest sum{} = {}".format(best_combination, best_sum))
+
+#divide list
+def chunker_list(seq, size):
+    return (seq[i::size] for i in range(size))
