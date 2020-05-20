@@ -17,10 +17,19 @@ def index():
     else:
         values = []
         for key, val in request.form.items():
-            print(key)
             if key.startswith("e"):
-                print(key)
                 values.append(int(val))
         takt_time = float(request.form.get("takt_time"))
         op = shareOut(values,takt_time)
-        return render_template("results.html", op = op)
+        divisor = takt_time * (float(list(op.keys())[-1]) + 1)
+        numerator = 0
+
+        for v in (list(op.values())):
+            print(v[1])
+            numerator += v[1]
+
+        equilibrado = (numerator/divisor) * 100
+        print(numerator)
+        print(divisor)
+
+        return render_template("results.html", op = op, equilibrado = equilibrado)
