@@ -22,7 +22,8 @@ def index():
         tiempo_ciclo = float(request.form.get("takt_time"))
         factor = float(request.form.get("factor"))
         op = shareOut(values,tiempo_ciclo, factor)
-        divisor = tiempo_ciclo * (float(list(op.keys())[-1]) + 1)
+        number_op = (float(list(op.keys())[-1]) + 1)
+        divisor = tiempo_ciclo * number_op
         numerator = 0
 
         for v in (list(op.values())):
@@ -31,4 +32,4 @@ def index():
         equilibrado = (numerator/divisor) * 100
 
 
-        return render_template("results.html", op = op, equilibrado = equilibrado, tiempo_ciclo = tiempo_ciclo)
+        return render_template("results.html", op = op, equilibrado = equilibrado, tiempo_ciclo = tiempo_ciclo, numerator = numerator, number_op = number_op)

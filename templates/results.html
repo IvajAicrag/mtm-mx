@@ -5,7 +5,16 @@
 {% endblock %}
 
 {% block script %}
-  <script src="../static/mtm.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelector('#tiempoCiclo').onchange = function() {
+        console.log('{{numerator}}');
+        console.log(document.querySelector('#tiempoCiclo').value);
+        let result = ('{{ numerator }}' / (document.querySelector('#tiempoCiclo').value * '{{ number_op }}') * 100);
+        document.querySelector('#equilibrado').innerHTML = '%' + result;
+      }
+    })
+  </script>
 {% endblock %}
 
 {% block main %}
@@ -20,11 +29,11 @@
   </div>
 
   <div class="row">
-    <div class="col-3" id="tiempoCiclo">
-      {{ tiempo_ciclo }}
+    <div class="col-3" >
+      <input id="tiempoCiclo" type="number" step="0.01" name="intiempoCiclo" value="{{ tiempo_ciclo }}">
     </div>
-    <div class="col-3" id="equilibrado">
-      %{{ equilibrado }}
+    <div class="col-3">
+      <div id="equilibrado">%{{ equilibrado }}</div>
     </div>
   </div>
 </div>
