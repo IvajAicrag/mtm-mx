@@ -9,251 +9,266 @@
   <h1>MTM Cable</h1>
 
   <form class="form-group" action="/" method="post">
-    <label for="takt_time"><h5>Tiempo de ciclo</h5></label><input id="takt_time" type="number" step="0.01" name="takt_time" value="0">
-    <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">Tipo</th>
-        <th scope="col">Elemento</th>
-        <th scope="col">Cantidad</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th rowspan="4">Conectores</th>
-        <td>Conectores grandes</td>
-        <td><input type="number" name="e0" value="0"></td>
-      </tr>
-      <tr>
-        <td>Conecotres medianos</td>
-        <td><input type="number" name="e1" value="0"></td>
-      </tr>
-      <tr>
-        <td>Conectores pequeños</td>
-        <td><input type="number" name="e2" value="0"></td>
-      </tr>
-      <tr>
-        <td>Interconexión</td>
-        <td><input type="number" name="e3" value="0"></td>
-      </tr>
-      <tr>
-        <th rowspan="2">Juntas</th>
-        <td>Juntas redondas</td>
-        <td><input type="number" name="e4" value="0"></td>
-      </tr>
-      <tr>
-        <td>Juntas planas</td>
-        <td><input type="number" name="e5" value="0"></td>
-      </tr>
-      <tr>
-        <th rowspan="6">Encliquetados</th>
-        <th colspan="2">Diametro &gt 1</th>
-      </tr>
-      <tr>
-        <td>Pequeños (&lt100mm)</td>
-        <td><input type="number" name="e6" value="0"></td>
-      </tr>
-      <tr>
-        <td>Medianos (100-300mm)</td>
-        <td><input type="number" name="e7" value="0"></td>
-      </tr>
-      <tr>
-        <td>Largos (300-500mm)</td>
-        <td><input type="number" name="e8" value="0"></td>
-      </tr>
-      <tr>
-        <td>Largos (500-750mm)</td>
-        <td><input type="number" name="e9" value="0"></td>
-      </tr>
-      <tr>
-        <td>Largos (750-1000mm)</td>
-        <td><input type="number" name="e10" value="0"></td>
-      </tr>
-      <tr>
-        <th rowspan="6">Encliquetados</th>
-        <th colspan="2">Diametro: 0,5-1</th>
-      </tr>
-      <tr>
-        <td>Pequeños (&lt100mm)</td>
-        <td><input type="number" name="e11" value="0"></td>
-      </tr>
-      <tr>
-        <td>Medianos (100-300mm)</td>
-        <td><input type="number" name="e12" value="0"></td>
-      </tr>
-      <tr>
-        <td>Largos (300-500mm)</td>
-        <td><input type="number" name="e13" value="0"></td>
-      </tr>
-      <tr>
-        <td>Largos (500-750mm)</td>
-        <td><input type="number" name="e14" value="0"></td>
-      </tr>
-      <tr>
-        <td>Largos (750-1000mm)</td>
-        <td><input type="number" name="e15" value="0"></td>
-      </tr>
-      <tr>
-        <th rowspan="6">Encliquetados</th>
-        <th colspan="2">Diametro: &lt0,5</th>
-      </tr>
-      <tr>
-        <td>Pequeños (&lt100mm)</td>
-        <td><input type="number" name="e16" value="0"></td>
-      </tr>
-      <tr>
-        <td>Medianos (100-300mm)</td>
-        <td><input type="number" name="e17" value="0"></td>
-      </tr>
-      <tr>
-        <td>Largos (300-500mm)</td>
-        <td><input type="number" name="e18" value="0"></td>
-      </tr>
-      <tr>
-        <td>Largos (500-750mm)</td>
-        <td><input type="number" name="e19" value="0"></td>
-      </tr>
-      <tr>
-        <td>Largos (750-1000mm)</td>
-        <td><input type="number" name="e20" value="0"></td>
-      </tr>
-      <tr>
-        <th rowspan="4">Encliquetados</th>
-        <th colspan="2">Interconexión</th>
-      </tr>
-      <tr>
-        <td>Pequeños (&lt100mm)</td>
-        <td><input type="number" name="e21" value="0"></td>
-      </tr>
-      <tr>
-        <td>Medianos (100-300mm)</td>
-        <td><input type="number" name="e22" value="0"></td>
-      </tr>
-      <tr>
-        <td>Largos (&gt300mm)</td>
-        <td><input type="number" name="e23" value="0"></td>
-      </tr>
-      <tr>
-        <th rowspan="2">Bridas</th>
-        <td>Bridas simples</td>
-        <td><input type="number" name="e24" value="0"></td>
-      </tr>
-      <tr>
-        <td>Bridas complejas</td>
-        <td><input type="number" name="e25" value="0"></td>
-      </tr>
-      <tr>
-        <th rowspan="2">Lámparas</th>
-        <td>Lámparas giratorias</td>
-        <td><input type="number" name="e26" value="0"></td>
-      </tr>
-      <tr>
-        <td>Lámparas lengüeta</td>
-        <td><input type="number" name="e27" value="0"></td>
-      </tr>
-      <tr>
-        <th rowspan="6">Elementos de seguridad</th>
-        <td>Retenedores</td>
-        <td><input type="number" name="e28" value="0"></td>
-      </tr>
-      <tr>
-        <td>Cierres de seguridad</td>
-        <td><input type="number" name="e29" value="0"></td>
-      </tr
-      <tr>
-        <td>Cerrar tapas (automático)</td>
-        <td><input type="number" name="e30" value="0"></td>
-      </tr>
-      <tr>
-        <td>De libro</td>
-        <td><input type="number" name="e31" value="0"></td>
-      </tr>
-      <tr>
-        <td>Integrados</td>
-        <td><input type="number" name="e32" value="0"></td>
-      </tr>
-      <tr>
-        <td>Independientes</td>
-        <td><input type="number" name="e33" value="0"></td>
-      </tr>
-      <tr>
-        <th rowspan="4">Encintados</th>
-        <td>Encitado manual</td>
-        <td><input type="number" name="e34" value="0"></td>
-      </tr>
-      <tr>
-        <td>Encintado manual con posición</td>
-        <td><input type="number" name="e35" value="0"></td>
-      </tr>
-      <tr>
-        <td>Encintado automático</td>
-        <td><input type="number" name="e36" value="0"></td>
-      </tr>
-      <tr>
-        <td>Encintado automático con posición</td>
-        <td><input type="number" name="e37" value="0"></td>
-      </tr>
-      <tr>
-        <th rowspan="2">Embalaje</th>
-        <td>Embalar cable a caja</td>
-        <td><input type="number" name="e38" value="0"></td>
-      </tr>
-      <tr>
-        <td>Embalar cable de plástico a caja</td>
-        <td><input type="number" name="e39" value="0"></td>
-      </tr>
-      <tr>
-        <th rowspan="12">Analizar conjunto</th>
-        <th colspan="2">Equipo test eléctrico</th>
-      </tr>
-      <tr>
-        <td>Conectores grandes (&gt500mm<sup>2</sup>)</td>
-        <td><input type="number" name="e40" value="0"></td>
-      </tr>
-      <tr>
-        <td>Conectores medianos (200-500mm<sup>2</sup>)</td>
-        <td><input type="number" name="e41" value="0"></td>
-      </tr>
-      <tr>
-        <td>Conectores pequeños (&lt 200m<sup>2</sup>)</td>
-        <td><input type="number" name="e42" value="0"></td>
-      </tr>
-      <tr>
-        <td>Tiempo de máquina</td>
-        <td><input type="number" name="e43" value="0"></td>
-      </tr>
-      <tr>
-        <th colspan="2">Equipo test estanqueidad</th>
-      </tr>
-      <tr>
-        <td>Conectores (pos. sin giro)</td>
-        <td><input type="number" name="e44" value="0"></td>
-      </tr>
-      <tr>
-        <td>Portalámparas (pos. con giro)</td>
-        <td><input type="number" name="e45" value="0"></td>
-      </tr>
-      <tr>
-        <td>Pasamuros (pos. a presión)</td>
-        <td><input type="number" name="e46" value="0"></td>
-      </tr>
-      <tr>
-        <td>Tiempo de llenado de máquina (seg.)</td>
-        <td><input type="number" name="e47" value="0"></td>
-      </tr>
-      <tr>
-        <td>Tiempo estabil. (seg.)</td>
-        <td><input type="number" name="e48" value="0"></td>
-      </tr>
-      <tr>
-        <td>Prueba (seg.)</td>
-        <td><input type="number" name="e49" value="0"></td>
-      </tr>
-    
+    <div class="form-row">
+      <div class="col">
+        <label for="takt_time"><h5>Tiempo de ciclo</h5></label><input id="takt_time" class="form-control" type="number" step="0.01" name="takt_time" value="0">
+      </div>
+      <div class="col">
+        <label for="factores"><h5>Tipo de Operario</h5></label>
+        <select class="form-control" name="factor" id="factores">
+          <option value="1">A</option>
+          <option value="0.91">B</option>
+          <option value="0.77">C</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row">
+      <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Tipo</th>
+          <th scope="col">Elemento</th>
+          <th scope="col">Cantidad</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th rowspan="4">Conectores</th>
+          <td>Conectores grandes</td>
+          <td><input type="number" name="e0" value="0"></td>
+        </tr>
+        <tr>
+          <td>Conecotres medianos</td>
+          <td><input type="number" name="e1" value="0"></td>
+        </tr>
+        <tr>
+          <td>Conectores pequeños</td>
+          <td><input type="number" name="e2" value="0"></td>
+        </tr>
+        <tr>
+          <td>Interconexión</td>
+          <td><input type="number" name="e3" value="0"></td>
+        </tr>
+        <tr>
+          <th rowspan="2">Juntas</th>
+          <td>Juntas redondas</td>
+          <td><input type="number" name="e4" value="0"></td>
+        </tr>
+        <tr>
+          <td>Juntas planas</td>
+          <td><input type="number" name="e5" value="0"></td>
+        </tr>
+        <tr>
+          <th rowspan="6">Encliquetados</th>
+          <th colspan="2">Diametro &gt 1</th>
+        </tr>
+        <tr>
+          <td>Pequeños (&lt100mm)</td>
+          <td><input type="number" name="e6" value="0"></td>
+        </tr>
+        <tr>
+          <td>Medianos (100-300mm)</td>
+          <td><input type="number" name="e7" value="0"></td>
+        </tr>
+        <tr>
+          <td>Largos (300-500mm)</td>
+          <td><input type="number" name="e8" value="0"></td>
+        </tr>
+        <tr>
+          <td>Largos (500-750mm)</td>
+          <td><input type="number" name="e9" value="0"></td>
+        </tr>
+        <tr>
+          <td>Largos (750-1000mm)</td>
+          <td><input type="number" name="e10" value="0"></td>
+        </tr>
+        <tr>
+          <th rowspan="6">Encliquetados</th>
+          <th colspan="2">Diametro: 0,5-1</th>
+        </tr>
+        <tr>
+          <td>Pequeños (&lt100mm)</td>
+          <td><input type="number" name="e11" value="0"></td>
+        </tr>
+        <tr>
+          <td>Medianos (100-300mm)</td>
+          <td><input type="number" name="e12" value="0"></td>
+        </tr>
+        <tr>
+          <td>Largos (300-500mm)</td>
+          <td><input type="number" name="e13" value="0"></td>
+        </tr>
+        <tr>
+          <td>Largos (500-750mm)</td>
+          <td><input type="number" name="e14" value="0"></td>
+        </tr>
+        <tr>
+          <td>Largos (750-1000mm)</td>
+          <td><input type="number" name="e15" value="0"></td>
+        </tr>
+        <tr>
+          <th rowspan="6">Encliquetados</th>
+          <th colspan="2">Diametro: &lt0,5</th>
+        </tr>
+        <tr>
+          <td>Pequeños (&lt100mm)</td>
+          <td><input type="number" name="e16" value="0"></td>
+        </tr>
+        <tr>
+          <td>Medianos (100-300mm)</td>
+          <td><input type="number" name="e17" value="0"></td>
+        </tr>
+        <tr>
+          <td>Largos (300-500mm)</td>
+          <td><input type="number" name="e18" value="0"></td>
+        </tr>
+        <tr>
+          <td>Largos (500-750mm)</td>
+          <td><input type="number" name="e19" value="0"></td>
+        </tr>
+        <tr>
+          <td>Largos (750-1000mm)</td>
+          <td><input type="number" name="e20" value="0"></td>
+        </tr>
+        <tr>
+          <th rowspan="4">Encliquetados</th>
+          <th colspan="2">Interconexión</th>
+        </tr>
+        <tr>
+          <td>Pequeños (&lt100mm)</td>
+          <td><input type="number" name="e21" value="0"></td>
+        </tr>
+        <tr>
+          <td>Medianos (100-300mm)</td>
+          <td><input type="number" name="e22" value="0"></td>
+        </tr>
+        <tr>
+          <td>Largos (&gt300mm)</td>
+          <td><input type="number" name="e23" value="0"></td>
+        </tr>
+        <tr>
+          <th rowspan="2">Bridas</th>
+          <td>Bridas simples</td>
+          <td><input type="number" name="e24" value="0"></td>
+        </tr>
+        <tr>
+          <td>Bridas complejas</td>
+          <td><input type="number" name="e25" value="0"></td>
+        </tr>
+        <tr>
+          <th rowspan="2">Lámparas</th>
+          <td>Lámparas giratorias</td>
+          <td><input type="number" name="e26" value="0"></td>
+        </tr>
+        <tr>
+          <td>Lámparas lengüeta</td>
+          <td><input type="number" name="e27" value="0"></td>
+        </tr>
+        <tr>
+          <th rowspan="6">Elementos de seguridad</th>
+          <td>Retenedores</td>
+          <td><input type="number" name="e28" value="0"></td>
+        </tr>
+        <tr>
+          <td>Cierres de seguridad</td>
+          <td><input type="number" name="e29" value="0"></td>
+        </tr
+        <tr>
+          <td>Cerrar tapas (automático)</td>
+          <td><input type="number" name="e30" value="0"></td>
+        </tr>
+        <tr>
+          <td>De libro</td>
+          <td><input type="number" name="e31" value="0"></td>
+        </tr>
+        <tr>
+          <td>Integrados</td>
+          <td><input type="number" name="e32" value="0"></td>
+        </tr>
+        <tr>
+          <td>Independientes</td>
+          <td><input type="number" name="e33" value="0"></td>
+        </tr>
+        <tr>
+          <th rowspan="4">Encintados</th>
+          <td>Encitado manual</td>
+          <td><input type="number" name="e34" value="0"></td>
+        </tr>
+        <tr>
+          <td>Encintado manual con posición</td>
+          <td><input type="number" name="e35" value="0"></td>
+        </tr>
+        <tr>
+          <td>Encintado automático</td>
+          <td><input type="number" name="e36" value="0"></td>
+        </tr>
+        <tr>
+          <td>Encintado automático con posición</td>
+          <td><input type="number" name="e37" value="0"></td>
+        </tr>
+        <tr>
+          <th rowspan="2">Embalaje</th>
+          <td>Embalar cable a caja</td>
+          <td><input type="number" name="e38" value="0"></td>
+        </tr>
+        <tr>
+          <td>Embalar cable de plástico a caja</td>
+          <td><input type="number" name="e39" value="0"></td>
+        </tr>
+        <tr>
+          <th rowspan="12">Analizar conjunto</th>
+          <th colspan="2">Equipo test eléctrico</th>
+        </tr>
+        <tr>
+          <td>Conectores grandes (&gt500mm<sup>2</sup>)</td>
+          <td><input type="number" name="e40" value="0"></td>
+        </tr>
+        <tr>
+          <td>Conectores medianos (200-500mm<sup>2</sup>)</td>
+          <td><input type="number" name="e41" value="0"></td>
+        </tr>
+        <tr>
+          <td>Conectores pequeños (&lt 200m<sup>2</sup>)</td>
+          <td><input type="number" name="e42" value="0"></td>
+        </tr>
+        <tr>
+          <td>Tiempo de máquina</td>
+          <td><input type="number" name="e43" value="0"></td>
+        </tr>
+        <tr>
+          <th colspan="2">Equipo test estanqueidad</th>
+        </tr>
+        <tr>
+          <td>Conectores (pos. sin giro)</td>
+          <td><input type="number" name="e44" value="0"></td>
+        </tr>
+        <tr>
+          <td>Portalámparas (pos. con giro)</td>
+          <td><input type="number" name="e45" value="0"></td>
+        </tr>
+        <tr>
+          <td>Pasamuros (pos. a presión)</td>
+          <td><input type="number" name="e46" value="0"></td>
+        </tr>
+        <tr>
+          <td>Tiempo de llenado de máquina (seg.)</td>
+          <td><input type="number" name="e47" value="0"></td>
+        </tr>
+        <tr>
+          <td>Tiempo estabil. (seg.)</td>
+          <td><input type="number" name="e48" value="0"></td>
+        </tr>
+        <tr>
+          <td>Prueba (seg.)</td>
+          <td><input type="number" name="e49" value="0"></td>
+        </tr>
 
 
-    </tbody>
-  </table>
+
+      </tbody>
+    </table>
+    </div>
+
   <button class="btn btn-primary" type="submit">Calcular</button>
   </form>
 
