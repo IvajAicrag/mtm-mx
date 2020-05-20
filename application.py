@@ -19,10 +19,10 @@ def index():
         for key, val in request.form.items():
             if key.startswith("e"):
                 values.append(int(val))
-        takt_time = float(request.form.get("takt_time"))
+        tiempo_ciclo = float(request.form.get("takt_time"))
         factor = float(request.form.get("factor"))
-        op = shareOut(values,takt_time, factor)
-        divisor = takt_time * (float(list(op.keys())[-1]) + 1)
+        op = shareOut(values,tiempo_ciclo, factor)
+        divisor = tiempo_ciclo * (float(list(op.keys())[-1]) + 1)
         numerator = 0
 
         for v in (list(op.values())):
@@ -31,4 +31,4 @@ def index():
         equilibrado = (numerator/divisor) * 100
 
 
-        return render_template("results.html", op = op, equilibrado = equilibrado)
+        return render_template("results.html", op = op, equilibrado = equilibrado, tiempo_ciclo = tiempo_ciclo)

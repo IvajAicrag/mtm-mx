@@ -9,8 +9,26 @@
 {% endblock %}
 
 {% block main %}
-<h5>Equilibrado</h5>
-<span>%{{ equilibrado }}</span>
+<div class="" id="equi">
+  <div class="row">
+    <div class="col-3">
+      <h5>Tiempo de ciclo</h5>
+    </div>
+    <div class="col-3">
+      <h5>Equilibrado</h5>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-3" id="tiempoCiclo">
+      {{ tiempo_ciclo }}
+    </div>
+    <div class="col-3" id="equilibrado">
+      %{{ equilibrado }}
+    </div>
+  </div>
+</div>
+<br>
   <table class="table">
     <thead>
       <tr>

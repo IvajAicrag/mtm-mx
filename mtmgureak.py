@@ -310,7 +310,7 @@ def shareOut(elements, takt_time, factor):
     const = 4.04
     analizar_el = (elements[40]*1.598 + elements[41]*1.815 + elements[42]*2.068 + const + elements[43]) / factor
 
-    if analizar_el - const > 0:
+    if analizar_el - (const / factor) > 0:
         dp7['Test eléctrico'] = analizar_el
         p7.append('Test eléctrico')
 
@@ -318,7 +318,7 @@ def shareOut(elements, takt_time, factor):
     const2 = 5.423
     analizar_est = (elements[44]*2.49 + elements[45]*3.992 + elements[46]*5.653 + elements[47] + elements[48] + elements[49] + const2) / factor
 
-    if analizar_est - const2 > 0:
+    if analizar_est - (const2 / factor) > 0:
         dp7['Test estanqueidad'] = analizar_est
         p7.append('Test estanqueidad')
 
