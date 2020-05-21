@@ -76,7 +76,7 @@ def shareOut(elements, takt_time, factor):
         dp6[task2] = dict_mtm[task2] / factor
 
     inter = elements[3] #int(input("conectores pequeños: "))
-    for i in range(ch):
+    for i in range(inter):
         task = 'poner interconexión'
         task2 = 'extraer interconexión'
         p1.append(task)

@@ -23,8 +23,11 @@ def index():
     else:
         values = []
         for key, val in request.form.items():
+
             if key.startswith("e"):
+
                 values.append(int(val))
+                
         tiempo_ciclo = float(request.form.get("takt_time"))
         factor = float(request.form.get("factor"))
         op = shareOut(values,tiempo_ciclo, factor)
