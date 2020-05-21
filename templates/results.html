@@ -12,55 +12,65 @@
         console.log(document.querySelector('#tiempoCiclo').value);
         let result = ('{{ numerator }}' / (document.querySelector('#tiempoCiclo').value * '{{ number_op }}') * 100);
         document.querySelector('#equilibrado').innerHTML = '%' + result;
-      }
-    })
+      };
+    });
   </script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  {{ charts_init }}
 {% endblock %}
 
 {% block main %}
-<div class="" id="equi">
+<div class="container">
   <div class="row">
-    <div class="col-3">
-      <h5>Tiempo de ciclo</h5>
-    </div>
-    <div class="col-3">
-      <h5>Equilibrado</h5>
+    <div class="col" style="max-width:100%">
+      {{ charts.my_chart }}
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-3" >
-      <input id="tiempoCiclo" type="number" step="0.01" name="intiempoCiclo" value="{{ tiempo_ciclo }}">
+  <div class="" id="equi">
+    <div class="row">
+      <div class="col-3">
+        <h5>Tiempo de ciclo</h5>
+      </div>
+      <div class="col-3">
+        <h5>Equilibrado</h5>
+      </div>
     </div>
-    <div class="col-3">
-      <div id="equilibrado">%{{ equilibrado }}</div>
+
+    <div class="row">
+      <div class="col-3" >
+        <input id="tiempoCiclo" type="number" step="0.01" name="intiempoCiclo" value="{{ tiempo_ciclo }}">
+      </div>
+      <div class="col-3">
+        <div id="equilibrado">%{{ equilibrado }}</div>
+      </div>
     </div>
   </div>
-</div>
-<br>
-  <table class="table">
-    <thead>
-      <tr>
-        <th>Operario</th>
-        <th>Tareas</th>
-        <th>Tiempo</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for info in op %}
+  <br>
+    <table class="table">
+      <thead>
         <tr>
-          <td>operador: {{ info + 1 }}</td>
-          <td>
-            <ul>
-              {% for i in op[info][0] %}
-                <li>{{ i }}</li>
-              {% endfor %}
-            </ul>
-          </td>
-          <td>{{ op[info][1] }}</td>
+          <th>Operario</th>
+          <th>Tareas</th>
+          <th>Tiempo</th>
         </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-
+      </thead>
+      <tbody>
+        {% for info in op %}
+          <tr>
+            <td>operador: {{ info + 1 }}</td>
+            <td>
+              <ul>
+                {% for i in op[info][0] %}
+                  <li>{{ i }}</li>
+                {% endfor %}
+              </ul>
+            </td>
+            <td>{{ op[info][1] }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+</div>
 {% endblock %}
