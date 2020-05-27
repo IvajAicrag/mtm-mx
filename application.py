@@ -27,7 +27,7 @@ def index():
             if key.startswith("e"):
 
                 values.append(int(val))
-                
+
         tiempo_ciclo = float(request.form.get("takt_time"))
         factor = float(request.form.get("factor"))
         op = shareOut(values,tiempo_ciclo, factor)
@@ -38,7 +38,7 @@ def index():
         for v in (list(op.values())):
             numerator += v[1]
 
-        equilibrado = (numerator / divisor) * 100
+        equilibrado = round((numerator / divisor) * 100, 2)
 
         # Make the data for the GRAPH
         data = []

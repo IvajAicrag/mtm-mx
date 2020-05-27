@@ -10,7 +10,7 @@
       document.querySelector('#tiempoCiclo').onchange = function() {
         console.log('{{numerator}}');
         console.log(document.querySelector('#tiempoCiclo').value);
-        let result = ('{{ numerator }}' / (document.querySelector('#tiempoCiclo').value * '{{ number_op }}') * 100);
+        let result = ('{{ numerator }}' / (document.querySelector('#tiempoCiclo').value * '{{ number_op }}') * 100).toFixed(2);
         document.querySelector('#equilibrado').innerHTML = '%' + result;
       };
     });

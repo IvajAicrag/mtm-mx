@@ -6,7 +6,7 @@ from helpers import best, chunker_list
 
 def shareOut(elements, takt_time, factor):
 
-    dict_mtm = {'poner conector grande': 2.59, 'extraer conector grande':1.26, 'poner conector mediano': 3.18, 'extraer conector mediano': 1.35, 'poner conector pequeño': 3.62, 'extraer conector pequeño': 1.73, 'poner interconexión': 4.24, 'extraer interconexión': 1.7301, 'junta redonda': 4.73, 'junta plana': 9.15, 'Encliquetado diámetro>1 (<100mm)': 2.70, 'Encliquetado diámetro>1 (100-300mm)':3.20, 'Encliquetado diámetro>1 (300-500mm)': 3.85, 'Encliquetado diámetro>1 (500-750mm)':4.71, 'Encliquetado diámetro>1 (750-1000mm)': 5.47, 'Encliquetado diámetro=0,5-1 (<100mm)': 3.2001, 'Encliquetado diámetro=0,5-1 (100-300mm)': 3.70, 'Encliquetado diámetro=0,5-1 (300-500mm)': 4.35, 'Encliquetado diámetro=0,5-1 (500-750mm)': 5.21, 'Encliquetado diámetro=0,5-1 (750-1000mm)': 5.97, 'Encliquetado diámetro<0,5 (<100mm)': 4.47, 'Encliquetado diámetro<0,5 (100-300mm)': 4.96, 'Encliquetado diámetro<0,5 (300-500mm)': 5.61, 'Encliquetado diámetro<0,5 (500-750mm)': 6.47, 'Encliquetado diámetro<0,5 (750-1000mm)': 7.24, 'Encliquetado interconexión<100mm': 5.52, 'Encliquetado interconexión=100-300mm': 5.92, 'Encliquetado interconexión>300mm': 6.24, 'poner brida simple': 5.43, 'cortar brida simple': 4.14, 'poner brida compleja': 6.79, 'orientar y cortar brida': 5.18, 'colocar lámpara giratoria':6.49, 'colocar lámpara lengueta': 6.05, 'colocar retenedor': 3.20, 'cierre seguridad': 4.50, 'cerrar tapa automática':5.66, 'cerrar tapa libro':3.15, 'cerrar integrado':1.73, 'cerrar independiente': 4.15, 'encintado manual': 9.42, 'encintado manual con posición': 10.81, 'encintado automático': 6.02, 'encintado automático con posición': 7.32, 'embalar cable directo a caja': 2.04, 'embalar cable de plástico a caja':10.36}
+    dict_mtm = {'poner conector grande': 2.59, 'extraer conector grande':1.26, 'poner conector mediano': 3.18, 'extraer conector mediano': 1.35, 'poner conector pequeño': 3.62, 'extraer conector pequeño': 1.73, 'poner interconexión': 4.24, 'extraer interconexión': 1.73, 'junta redonda': 4.73, 'junta plana': 9.15, 'Encliquetado diámetro>1 (<100mm)': 2.70, 'Encliquetado diámetro>1 (100-300mm)':3.20, 'Encliquetado diámetro>1 (300-500mm)': 3.85, 'Encliquetado diámetro>1 (500-750mm)':4.71, 'Encliquetado diámetro>1 (750-1000mm)': 5.47, 'Encliquetado diámetro=0,5-1 (<100mm)': 3.2001, 'Encliquetado diámetro=0,5-1 (100-300mm)': 3.70, 'Encliquetado diámetro=0,5-1 (300-500mm)': 4.35, 'Encliquetado diámetro=0,5-1 (500-750mm)': 5.21, 'Encliquetado diámetro=0,5-1 (750-1000mm)': 5.97, 'Encliquetado diámetro<0,5 (<100mm)': 4.47, 'Encliquetado diámetro<0,5 (100-300mm)': 4.96, 'Encliquetado diámetro<0,5 (300-500mm)': 5.61, 'Encliquetado diámetro<0,5 (500-750mm)': 6.47, 'Encliquetado diámetro<0,5 (750-1000mm)': 7.24, 'Encliquetado interconexión<100mm': 5.52, 'Encliquetado interconexión=100-300mm': 5.92, 'Encliquetado interconexión>300mm': 6.24, 'poner brida simple': 5.43, 'cortar brida simple': 4.14, 'poner brida compleja': 6.79, 'orientar y cortar brida': 5.18, 'colocar lámpara giratoria':6.49, 'colocar lámpara lengueta': 6.05, 'colocar retenedor': 3.20, 'cierre seguridad': 4.50, 'cerrar tapa automática':5.66, 'cerrar tapa libro':3.15, 'cerrar integrado':1.73, 'cerrar independiente': 4.15, 'encintado manual': 9.42, 'encintado manual con posición': 10.81, 'encintado automático': 6.02, 'encintado automático con posición': 7.32, 'embalar cable directo a caja': 2.04, 'embalar cable de plástico a caja':10.36}
 
     #dp1 = {'poner conector grande': 2.59, 'poner conector mediano': 3.18, 'poner conector pequeño': 3.62,'poner interconexión': 4.24}
     dp1 = {}
@@ -19,7 +19,7 @@ def shareOut(elements, takt_time, factor):
     #dp5 = {'cortar brida simple': 4.14, 'orientar y cortar brida': 5.18}
     dp5 = {}
     #dp6 = { 'extraer conector grande': 1.26, 'extraer conector mediano': 1.35, 'extraer conector pequeño': 1.73, 'extraer interconexión': 1.7301 }
-    dp6 = {}
+    dp6 = {'extraer cable': 0}
     dp7 = {}
     #dp8 = {'embalar cable directo a caja': 2.04, 'embalar cable de plástico a caja':10.36}
     dp8 = {}
@@ -52,37 +52,45 @@ def shareOut(elements, takt_time, factor):
     for i in range(cg):
         task = 'poner conector grande'
         task2 = 'extraer conector grande'
+        extraer = 'extraer cable'
         p1.append(task)
         dp1[task] = (dict_mtm[task]) / factor
-        p6.append(task2)
-        dp6[task2] = dict_mtm[task2] / factor
+        if len(p6) == 0:
+            p6.append(extraer)
+        dp6[extraer] += dict_mtm[task2] / factor
 
     cm = elements[1] #int(input("conectores medianos: "))
     for i in range(cm):
         task = 'poner conector mediano'
         task2 = 'extraer conector mediano'
+        extraer = 'extraer cable'
         p1.append(task)
         dp1[task] = (dict_mtm[task]) / factor
-        p6.append(task2)
-        dp6[task2] = dict_mtm[task2] / factor
+        if len(p6) == 0:
+            p6.append(extraer)
+        dp6[extraer] += dict_mtm[task2] / factor
 
     ch = elements[2] #int(input("conectores pequeños: "))
     for i in range(ch):
         task = 'poner conector pequeño'
         task2 = 'extraer conector pequeño'
+        extraer = 'extraer cable'
         p1.append(task)
         dp1[task] = (dict_mtm[task]) / factor
-        p6.append(task2)
-        dp6[task2] = dict_mtm[task2] / factor
+        if len(p6) == 0:
+            p6.append(extraer)
+        dp6[extraer] += dict_mtm[task2] / factor
 
     inter = elements[3] #int(input("conectores pequeños: "))
     for i in range(inter):
         task = 'poner interconexión'
         task2 = 'extraer interconexión'
+        extraer = 'extraer cable'
         p1.append(task)
         dp1[task] = (dict_mtm[task]) / factor
-        p6.append(task2)
-        dp6[task2] = dict_mtm[task2] / factor
+        if len(p6) == 0:
+            p6.append(extraer)
+        dp6[extraer] += dict_mtm[task2] / factor
 
     jun = elements[4] #int(input('junta_redonda: '))
     for i in range(jun):
@@ -429,13 +437,21 @@ def shareOut(elements, takt_time, factor):
             new_dic = copy.deepcopy(dic_pendientes[i])
 
             for key in new_dic:
-                n += 1
-                operarios[n] = [[],0]
-                operarios[n][0].append(key)
-                operarios[n][1] = dic_pendientes[i][key]
-                pendientes[i].remove(key)
+                if ((operarios[n][0] == ['extraer cable']) and (operarios[n][1] + dic_pendientes[i][key] <= takt_time)):
 
-                dic_pendientes[i].pop(key, None)
+                    operarios[n][0].append(key)
+                    operarios[n][1] += round(dic_pendientes[i][key],2)
+                    pendientes[i].remove(key)
+
+                    dic_pendientes[i].pop(key, None)
+                else:
+                    n += 1
+                    operarios[n] = [[],0]
+                    operarios[n][0].append(key)
+                    operarios[n][1] = round(dic_pendientes[i][key],2)
+                    pendientes[i].remove(key)
+
+                    dic_pendientes[i].pop(key, None)
 
 
         while len(pendientes[i]) > 0:
@@ -448,20 +464,31 @@ def shareOut(elements, takt_time, factor):
             up_time = takt_time - operarios[n][1]
 
             #get best combination with takt_time restriction
-            b_comb, b_sum = best(pt,up_time)
-            b_comblist = list(b_comb)
+            # b_comb, b_sum = best(pt,up_time)
+            # b_comblist = list(b_comb)
+
+            indexes , b_sum = best(pt,up_time)
+            indexes = list(indexes)
+            b_sum = round(b_sum,2)
+
+            for index in indexes:
+
+                operarios[n][0].append(pendientes[i][index])
+            #Eliminate assigned activities from pendientes
+            pendientes[i]= [val for ind, val in enumerate(pendientes[i]) if ind not in indexes]
 
 
-            #eliminate the combination from p[i] and add to operarios
-            for z in b_comb:
-                for key in dic_pendientes[i]:
-                #for key in dict_mtm:
-                    if dic_pendientes[i][key] == z:
-                    #if dict_mtm[key] == z:
-                        operarios[n][0].append(key)
-                        #print(operarios)
-                        pendientes[i].remove(key)
-                        break
+            #Delete this is there is not bugs
+            # #eliminate the combination from p[i] and add to operarios
+            # for z in b_comb:
+            #     for key in dic_pendientes[i]:
+            #     #for key in dict_mtm:
+            #         if dic_pendientes[i][key] == z:
+            #         #if dict_mtm[key] == z:
+            #             operarios[n][0].append(key)
+            #             #print(operarios)
+            #             pendientes[i].remove(key)
+            #             break
             operarios[n][1] += b_sum
             #print(operarios)
 
