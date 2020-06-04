@@ -26,6 +26,7 @@ def shareOut(elements, takt_time, factor):
     dp9 = {}
     dp10 = {}
     dp11 = {}
+    dp12 = {}
 
     #p1 = ['poner_cg', 'poner_cm', 'poner_cm']
     p1 = []
@@ -45,6 +46,7 @@ def shareOut(elements, takt_time, factor):
     p9 = []
     p10 = []
     p11 = []
+    p12 = []
 
     #def por_ahora():
     #takt_time = float(input("takt time: "))
@@ -333,8 +335,17 @@ def shareOut(elements, takt_time, factor):
     #takt_time = 15
     #transformar las p en tiempo
 
+    #set a variable to know if we have optimizate the priorities in the Encliquetados in case that we want to do the same for priorities 4 (p4)
+    optimization = 0
+    #Get know if we have to optimizate p4 too
+    if len(p4) > 20:
+        opti_p4 = True
+    else:
+        opti_p4 = False
+
     #In case of more thant 20 Encliquetados we will split the first 15 for optimization
     if len(p3) > 20 and len(p3) < 40:
+        optimization = 1
         p9 = copy.deepcopy(p8)
         dp9 = copy.deepcopy(dp8)
         p8 = copy.deepcopy(p7)
@@ -366,6 +377,7 @@ def shareOut(elements, takt_time, factor):
 
     elif len(p3)>= 40 and len(p3) < 60:
 
+        optimization = 2
         p10 = copy.deepcopy(p8)
         dp10 = copy.deepcopy(dp8)
         p9 = copy.deepcopy(p7)
@@ -394,6 +406,7 @@ def shareOut(elements, takt_time, factor):
 
     elif len(p3)>= 60:
 
+        optimization = 3
         p11 = copy.deepcopy(p8)
         dp11 = copy.deepcopy(dp8)
         p10 = copy.deepcopy(p7)
@@ -422,10 +435,93 @@ def shareOut(elements, takt_time, factor):
         p4 = division[1]
         p3 = division[0]
 
+        if opti_p4 == True:
+            if optimization == 0:
+                p9 = copy.deepcopy(p8)
+                dp9 = copy.deepcopy(dp8)
+                p8 = copy.deepcopy(p7)
+                dp8 = copy.deepcopy(dp7)
+                p7 = copy.deepcopy(p6)
+                dp7 = copy.deepcopy(dp6)
+                p6 = copy.deepcopy(p5)
+                dp6 = copy.deepcopy(dp5)
+
+                #store the dicts to make faster the operation
+                dp5 = copy.deepcopy(dp4)
+
+                #divide p4 in two
+                division = list(chunker_list(p4,2))
+
+                p5 = division[1]
+                p4 = division[0]
+
+            elif optimization == 1:
+                p10 = copy.deepcopy(p9)
+                dp10 = copy.deepcopy(dp9)
+                p9 = copy.deepcopy(p8)
+                dp9.clear()
+                dp9 = copy.deepcopy(dp8)
+                p8 = copy.deepcopy(p7)
+                dp8 = copy.deepcopy(dp7)
+                p7 = copy.deepcopy(p6)
+                dp7.clear()
+                dp7 = copy.deepcopy(dp6)
+
+                #store the dicts to make the operation faster
+                dp6 = copy.deepcopy(dp5)
+
+                #divide p5 in two
+                division = list(chunker_list(p5,2))
+
+                p6 = division[1]
+                p5 = division[0]
+
+            elif optimization == 2:
+                p11 = copy.deepcopy(p10)
+                dp11 = copy.deepcopy(dp10)
+                p10 = copy.deepcopy(p9)
+                dp10.clear()
+                dp10 = copy.deepcopy(dp9)
+                p9 = copy.deepcopy(p8)
+                dp9 = copy.deepcopy(dp8)
+                p8 = copy.deepcopy(p7)
+                dp8.clear()
+                dp8 = copy.deepcopy(dp7)
+
+                #store dics
+                dp7 = copy.deepcopy(dp6)
+
+                #divide p6
+                division = list(chunker_list(p6,2))
+
+                p7 = division[1]
+                p6 = division[0]
+
+            elif optimization == 3:
+                p12 = copy.deepcopy(p11)
+                dp12 = copy.deepcopy(dp11)
+                p11 = copy.deepcopy(p10)
+                dp11.clear()
+                dp11 = copy.deepcopy(dp10)
+                p10 = copy.deepcopy(p9)
+                dp10 = copy.deepcopy(dp9)
+                p9 = copy.deepcopy(p8)
+                dp9.clear()
+                dp9 = copy.deepcopy(dp8)
+
+                #store dics
+                dp8 = copy.deepcopy(dp7)
+
+                #divide p7
+                division = list(chunker_list(p7,2))
+
+                p8 = division[1]
+                p7 = division[0]
 
 
-    pendientes = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11]
-    dic_pendientes = [dp1, dp2, dp3, dp4, dp5, dp6, dp7, dp8, dp9, dp10, dp11]
+
+    pendientes = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11,p12]
+    dic_pendientes = [dp1, dp2, dp3, dp4, dp5, dp6, dp7, dp8, dp9, dp10, dp11, dp12]
 
     n = 0
     operarios = {}
@@ -518,6 +614,7 @@ def shareOut_multiple(elements, takt_time, factores):
     dp9 = {}
     dp10 = {}
     dp11 = {}
+    dp12 = {}
 
     #p1 = ['poner_cg', 'poner_cm', 'poner_cm']
     p1 = []
@@ -537,6 +634,7 @@ def shareOut_multiple(elements, takt_time, factores):
     p9 = []
     p10 = []
     p11 = []
+    p12 = []
 
     #convert factores into a list of factors
     factors = []
@@ -837,8 +935,17 @@ def shareOut_multiple(elements, takt_time, factores):
     #takt_time = 15
     #transformar las p en tiempo
 
+    #set a variable to know if we have optimizate the priorities in the Encliquetados in case that we want to do the same for priorities 4 (p4)
+    optimization = 0
+    #Get know if we have to optimizate p4 too
+    if len(p4) > 20:
+        opti_p4 = True
+    else:
+        opti_p4 = False
     #In case of more thant 20 Encliquetados we will split the first 15 for optimization
     if len(p3) > 20 and len(p3) < 40:
+
+        optimization = 1
         p9 = copy.deepcopy(p8)
         dp9 = copy.deepcopy(dp8)
         p8 = copy.deepcopy(p7)
@@ -870,6 +977,7 @@ def shareOut_multiple(elements, takt_time, factores):
 
     elif len(p3)>= 40 and len(p3) < 60:
 
+        optimization = 2
         p10 = copy.deepcopy(p8)
         dp10 = copy.deepcopy(dp8)
         p9 = copy.deepcopy(p7)
@@ -898,6 +1006,7 @@ def shareOut_multiple(elements, takt_time, factores):
 
     elif len(p3)>= 60:
 
+        optimization = 3
         p11 = copy.deepcopy(p8)
         dp11 = copy.deepcopy(dp8)
         p10 = copy.deepcopy(p7)
@@ -926,10 +1035,94 @@ def shareOut_multiple(elements, takt_time, factores):
         p4 = division[1]
         p3 = division[0]
 
+    if opti_p4 == True:
+        if optimization == 0:
+            p9 = copy.deepcopy(p8)
+            dp9 = copy.deepcopy(dp8)
+            p8 = copy.deepcopy(p7)
+            dp8 = copy.deepcopy(dp7)
+            p7 = copy.deepcopy(p6)
+            dp7 = copy.deepcopy(dp6)
+            p6 = copy.deepcopy(p5)
+            dp6 = copy.deepcopy(dp5)
+
+            #store the dicts to make faster the operation
+            dp5 = copy.deepcopy(dp4)
+
+            #divide p4 in two
+            division = list(chunker_list(p4,2))
+
+            p5 = division[1]
+            p4 = division[0]
+
+        elif optimization == 1:
+            p10 = copy.deepcopy(p9)
+            dp10 = copy.deepcopy(dp9)
+            p9 = copy.deepcopy(p8)
+            dp9.clear()
+            dp9 = copy.deepcopy(dp8)
+            p8 = copy.deepcopy(p7)
+            dp8 = copy.deepcopy(dp7)
+            p7 = copy.deepcopy(p6)
+            dp7.clear()
+            dp7 = copy.deepcopy(dp6)
+
+            #store the dicts to make the operation faster
+            dp6 = copy.deepcopy(dp5)
+
+            #divide p5 in two
+            division = list(chunker_list(p5,2))
+
+            p6 = division[1]
+            p5 = division[0]
+
+        elif optimization == 2:
+            p11 = copy.deepcopy(p10)
+            dp11 = copy.deepcopy(dp10)
+            p10 = copy.deepcopy(p9)
+            dp10.clear()
+            dp10 = copy.deepcopy(dp9)
+            p9 = copy.deepcopy(p8)
+            dp9 = copy.deepcopy(dp8)
+            p8 = copy.deepcopy(p7)
+            dp8.clear()
+            dp8 = copy.deepcopy(dp7)
+
+            #store dics
+            dp7 = copy.deepcopy(dp6)
+
+            #divide p6
+            division = list(chunker_list(p6,2))
+
+            p7 = division[1]
+            p6 = division[0]
+
+        elif optimization == 3:
+            p12 = copy.deepcopy(p11)
+            dp12 = copy.deepcopy(dp11)
+            p11 = copy.deepcopy(p10)
+            dp11.clear()
+            dp11 = copy.deepcopy(dp10)
+            p10 = copy.deepcopy(p9)
+            dp10 = copy.deepcopy(dp9)
+            p9 = copy.deepcopy(p8)
+            dp9.clear()
+            dp9 = copy.deepcopy(dp8)
+
+            #store dics
+            dp8 = copy.deepcopy(dp7)
+
+            #divide p7
+            division = list(chunker_list(p7,2))
+
+            p8 = division[1]
+            p7 = division[0]
 
 
-    pendientes = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11]
-    dic_pendientes = [dp1, dp2, dp3, dp4, dp5, dp6, dp7, dp8, dp9, dp10, dp11]
+
+
+    pendientes = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12]
+    dic_pendientes = [dp1, dp2, dp3, dp4, dp5, dp6, dp7, dp8, dp9, dp10, dp11, dp12]
 
     n = 0
     operarios = {}
