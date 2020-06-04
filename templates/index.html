@@ -3,24 +3,106 @@
 {% block title %}
     Index
 {% endblock %}
+{% block script %}
+  <script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', () => {
+    //Check if there is fata in multiples
+    if (!localStorage.getItem('selection')) {
+      localStorage.setItem('selection', false)
+    }
+    else if((localStorage.getItem('selection') == false)) {
+      un_factor();
+      localStorage.setItem('selection', false);
+
+    }
+    else {
+      mult_factores();
+    }
+  });
+
+  </script>
+  <script type="text/javascript">
+    function un_factor() {
+      document.querySelector("#tipo_operario").classList.remove("d-none");
+      document.querySelector("#multiples_factores").classList.add("d-none");
+      document.querySelector("#tipos").classList.add("d-none");
+      document.querySelector("#multiples").classList.remove("d-none");
+      document.querySelector("#operario_A").value = 0;
+      document.querySelector("#operario_B").value = 0;
+      document.querySelector("#operario_C1_1").value = 0;
+      document.querySelector("#operario_C").value = 0;
+      localStorage.setItem('selection',false)
+
+    };
+
+    function mult_factores() {
+      document.querySelector("#tipo_operario").classList.add("d-none");
+      document.querySelector("#multiples_factores").classList.remove("d-none");
+      document.querySelector("#tipos").classList.remove("d-none");
+      document.querySelector("#multiples").classList.add("d-none")
+      localStorage.setItem('selection',true)
+    };
+
+  </script>
+{% endblock %}
 
 {% block main %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1>MTM Cable</h1>
+    </div>
+      <div class="col">
+        <button type="button" class="btn btn-primary d-none" id="tipos" onclick="un_factor()">Un tipo de Factor</button>
+        <button type="button" class="btn btn-primary" id="multiples" onclick="mult_factores()">Múltiples factores</button>
+      </div>
+  </div>
 
-  <h1>MTM Cable</h1>
 
   <form class="form-group" action="/" method="post">
-    <div class="form-row">
+    <div class="form-row align-items-center">
       <div class="col">
-        <label for="takt_time"><h5>Tiempo de ciclo</h5></label><input id="takt_time" class="form-control" type="number" step="0.01" name="takt_time" value="0">
+        <label  for="takt_time"><h5>Tiempo de ciclo</h5></label><input id="takt_time" class="form-control" type="number" step="0.01" name="takt_time" value="0">
       </div>
-      <div class="col">
-        <label for="factores"><h5>Tipo de Operario</h5></label>
+      <div class="col" id="tipo_operario">
+        <label for="factores">
+          <h5>Un tipo de operario</h5>
+        </label>
         <select class="form-control" name="factor" id="factores">
           <option value="1">A</option>
           <option value="0.91">B</option>
           <option value="0.83">C1.1</option>
           <option value="0.77">C</option>
         </select>
+      </div>
+      <div class="col d-none" id="multiples_factores">
+        <h5>Múltiples factores</h5>
+
+        <div class="form-group row">
+          <label for="operario_A" class="col-3 col-form-label">Operarios A</label>
+          <div class="col-sm-4">
+            <input id="operario_A" type="number" name="op_a" value="0">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="operario_B" class="col-3 col-form-label">Operarios B</label>
+          <div class="col-sm-4">
+            <input id="operario_B" type="number" name="op_b" value="0">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="operario_C1.1" class="col-3 col-form-label">Operarios C1.1</label>
+          <div class="col-sm-4">
+            <input id="operario_C1_1" type="number" name="op_c1.1" value="0">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="operario_C" class="col-3 col-form-label">Operarios C</label>
+          <div class="col-sm-4">
+            <input id="operario_C" type="number" name="op_c" value="0">
+          </div>
+        </div>
+
       </div>
     </div>
     <div class="form-row">
@@ -272,5 +354,5 @@
 
   <button class="btn btn-primary" type="submit">Calcular</button>
   </form>
-
+</div>
 {% endblock %}
