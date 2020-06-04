@@ -44,7 +44,7 @@ def index():
         else:
 
             op = shareOut_multiple(values,tiempo_ciclo, tipos_op)
-            dic_factores = {1:"A", 0.91:"B", 0.83:"C1.1", 0.77:"C"}
+            dic_factores = {1.06:"1,75 REE", 1:"A", 0.91:"B", 0.83:"C1.1", 0.77:"C", 0.71:"CBR 85%", 0.65:"CBR 75%", 0.57:"RO1", 0.47:"RO2", 0.33:"RO3"}
             #Change factors to letters
             for fact in range(len(op)):
                 op[fact][2] = dic_factores[op[fact][2]]
@@ -53,7 +53,7 @@ def index():
             if extras < 0:
                 faltantes = abs(extras)
                 extras = 0
-                
+
             else:
                 faltantes = 0
             multiples = True

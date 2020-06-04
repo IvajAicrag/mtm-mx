@@ -638,14 +638,26 @@ def shareOut_multiple(elements, takt_time, factores):
 
     #convert factores into a list of factors
     factors = []
+    #factor 1,75 REE
+    factors.extend([1.06]*factores[0])
     #factor A
-    factors.extend([1]*factores[0])
+    factors.extend([1]*factores[1])
     #factor B
-    factors.extend([0.91]*factores[1])
+    factors.extend([0.91]*factores[2])
     #factor c1.1
-    factors.extend([0.83]*factores[2])
+    factors.extend([0.83]*factores[3])
     #factor c
-    factors.extend([0.77]*factores[3])
+    factors.extend([0.77]*factores[4])
+    #factor CBR 85%
+    factors.extend([0.71]*factores[5])
+    #factor CBR 75%
+    factors.extend([0.65]*factores[6])
+    #factor RO1
+    factors.extend([0.57]*factores[7])
+    #factor RO2
+    factors.extend([0.47]*factores[8])
+    #factor RO3
+    factors.extend([0.33]*factores[9])
 
     #Reverse to start with the lowest factores
     factors.reverse()
