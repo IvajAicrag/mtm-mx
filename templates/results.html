@@ -5,6 +5,38 @@
 {% endblock %}
 
 {% block script %}
+  <script type="text/javascript">
+      function exportTableToExcel(tableID, filename = ''){
+        var downloadLink;
+        var dataType = 'application/vnd.ms-excel';
+        var tableSelect = document.getElementById(tableID);
+        var tableHTML = tableSelect.outerHTML.replace(/ /g, '%20');
+
+        // Specify file name
+        filename = filename?filename+'.xls':'excel_data.xls';
+
+        // Create download link element
+        downloadLink = document.createElement("a");
+
+        document.body.appendChild(downloadLink);
+
+        if(navigator.msSaveOrOpenBlob){
+            var blob = new Blob(['\ufeff', tableHTML], {
+                type: dataType
+            });
+            navigator.msSaveOrOpenBlob( blob, filename);
+        }else{
+            // Create a link to the file
+            downloadLink.href = 'data:' + dataType + ', ' + tableHTML;
+
+            // Setting the file name
+            downloadLink.download = filename;
+
+            //triggering the function
+            downloadLink.click();
+        }
+    };
+  </script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       document.querySelector('#tiempoCiclo').onchange = function() {
@@ -45,10 +77,13 @@
       <div class="col-3">
         <div id="equilibrado">%{{ equilibrado }}</div>
       </div>
+      <div class="offset-md-3 col-3">
+        <button class="btn btn-success" onclick="exportTableToExcel('tblsingle', 'mtm-data')">Exportar tabla a excel</button>
+      </div>
     </div>
   </div>
   <br>
-    <table class="table">
+    <table id="tblsingle" class="table">
       <thead>
         <tr>
           <th>Operario</th>
